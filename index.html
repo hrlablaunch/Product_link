@@ -2,117 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Select Laptop Brand</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brand Selector</title>
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #2c3e50, #4ca1af);
-      color: #ffffff;
+      background: linear-gradient(to right, #4b6cb7, #182848);
+      color: white;
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 100vh;
-      padding: 30px 15px;
-      box-sizing: border-box;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
     }
 
     h1 {
-      font-size: 28px;
-      margin-bottom: 25px;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+      margin-bottom: 30px;
     }
 
     .button-container {
       display: flex;
       flex-direction: column;
       gap: 15px;
-      width: 100%;
+      width: 90%;
       max-width: 400px;
-      margin-bottom: 40px;
     }
 
     .brand-btn {
       padding: 15px;
-      font-size: 18px;
-      font-weight: 600;
-      background-color: #1abc9c;
-      color: #fff;
       border: none;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
       cursor: pointer;
-      transition: transform 0.2s, background-color 0.3s;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .brand-btn:hover {
-      background-color: #16a085;
-      transform: scale(1.03);
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
 
-    .form-container {
-      width: 100%;
-      max-width: 720px;
-      display: none;
-      animation: fadeIn 0.8s ease;
-      border-radius: 10px;
-      overflow: hidden;
-      background-color: #ffffff;
-    }
-
-    iframe {
-      width: 100%;
-      height: 650px;
-      border: none;
-      display: block;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    .hp { background-color: #1c75bc; color: white; }
+    .dell { background-color: #1c75bc; color: white; }
+    .acer { background-color: #1c75bc; color: white;}
+    .lenovo { background-color: #1c75bc; color: white; }
 
     @media (max-width: 600px) {
       h1 {
-        font-size: 22px;
+        font-size: 24px;
       }
 
       .brand-btn {
         font-size: 16px;
         padding: 12px;
       }
-
-      iframe {
-        height: 600px;
-      }
     }
   </style>
 </head>
 <body>
   <h1>Select Your Laptop Brand</h1>
-
   <div class="button-container">
-    <button class="brand-btn" onclick="showForm()">HP</button>
-    <button class="brand-btn" onclick="showForm()">Dell</button>
-    <button class="brand-btn" onclick="showForm()">Acer</button>
-    <button class="brand-btn" onclick="showForm()">Lenovo</button>
-  </div>
-
-  <div class="form-container" id="formContainer">
-    <iframe 
-      src="https://docs.google.com/forms/d/e/1FAIpQLSc0IIvhhcdguQTmoGGZ8NDfAu9poEtEQg3Pn-lJskD5KUK9sg/viewform?embedded=true" 
-      allowfullscreen>
-      Loading…
-    </iframe>
+    <button class="brand-btn hp" onclick="redirect()">HP</button>
+    <button class="brand-btn dell" onclick="redirect()">Dell</button>
+    <button class="brand-btn acer" onclick="redirect()">Acer</button>
+    <button class="brand-btn lenovo" onclick="redirect()">Lenovo</button>
   </div>
 
   <script>
-    function showForm() {
-      const formContainer = document.getElementById("formContainer");
-      formContainer.style.display = "block";
-      formContainer.scrollIntoView({ behavior: "smooth", block: "start" });
+    function redirect() {
+      window.location.href = "https://forms.gle/GsbmCbpxw5a39uQLA";
     }
   </script>
 </body>
